@@ -11,6 +11,7 @@ func main() {
     nums := [5]int{} //bydefault value is 0
     fmt.Println("Array:",nums)
      
-    names := [5]string{"sneha","sanjay","ishaan"}
+    names := [5]string{"sk","sk","ic"}
     fmt.Println("Array:",names)
+    fmt.Printf("Array: %q\n",names)
 }
