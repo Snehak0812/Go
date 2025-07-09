@@ -1,0 +1,31 @@
+package main
+
+import "fmt"
+
+func swap(num1 *int, num2 *int) {
+    var temp int
+    temp = *num1
+    *num1 = *num2
+    *num2 = temp
+}
+
+func main() {
+    var num1 int = 10
+    var ptr1 *int = &num1
+    fmt.Println("num:",num1)
+    fmt.Println(*ptr1)
+    var num2 int = 20
+    var ptr2 *int = &num2
+    fmt.Println("ptr1:",ptr1)
+    fmt.Println("ptr2:",ptr2)
+    
+    fmt.Println("num1:",num1)
+    fmt.Println("num2:",num2)
+    //passing by reference to swap both the variables
+    swap(&num1,&num2)
+    
+    
+    fmt.Println("num1:",num1)
+    fmt.Println("num2:",num2)
+    
+}
