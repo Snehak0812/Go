@@ -8,6 +8,23 @@ type Person struct {
     age int
 }
 
+type Address struct {
+    city string
+    country string
+}
+    
+type Contact struct {
+    email string
+    phone string
+}
+    
+type Employee struct {
+    Person  //Embedded struct
+    Address  //Embedded struct
+    Contact  //Embedded struct
+    Position string
+        
+} 
 func main() {
     //We can initialize a struct using various methods
     
@@ -40,4 +57,26 @@ func main() {
     fmt.Println("FirstName:",p3.firstName)
     fmt.Println("LastName:",p3.lastName)
     fmt.Println("Age:",p3.age)
+    
+    
+    //Creating instance of employee struct
+    Employee := Employee {
+        Person: Person {
+            firstName : "Raunak",
+            lastName : "Raj",
+            age: 18,
+        },
+        Address: Address {
+            city : "Bangalore",
+            country : "India",
+        },
+        Contact: Contact {
+            email : "sk@123",
+            phone : "908078",
+        },
+        Position: "Manager",
+    }
+    fmt.Println("Employee name:",Employee.Person.firstName)
+    fmt.Println("Employee age:",Employee.Person.age)
+    fmt.Println("Employee address:",Employee.Address.city,Employee.Address.country)
 }
